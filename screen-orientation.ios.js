@@ -2,7 +2,7 @@
 
 var frameModule=require("ui/frame"),
     application=require("application"),
-    utils=require("utils");
+    utils=require("utils/utils");
 
 var orientationType=null,
     completionCallback=null;
