@@ -2,6 +2,7 @@
 
 var frameModule=require("ui/frame"),
     application=require("application");
+    utils=require("utils");
 
 var orientationType=null,
     completionCallback=null;
@@ -102,10 +103,10 @@ function setOrientationsForViewControllers(){
     };
 
     if("landscape"==orientationType){
-        UIDevice.currentDevice().setValueForKey(UIInterfaceOrientation.UIInterfaceOrientationLandscapeRight, "orientation")
+        utils.ios.getter(UIDevice, UIDevice.currentDevice).setValueForKey(UIInterfaceOrientation.UIInterfaceOrientationLandscapeRight, "orientation")
     }
     if("portrait"==orientationType){
-        UIDevice.currentDevice().setValueForKey(UIInterfaceOrientation.UIInterfaceOrientationPortrait, "orientation")
+        utils.ios.getter(UIDevice, UIDevice.currentDevice).setValueForKey(UIInterfaceOrientation.UIInterfaceOrientationPortrait, "orientation")
     }if("all"==orientationType){
         //no-op
     }if("allbutupsidedown"==orientationType){
